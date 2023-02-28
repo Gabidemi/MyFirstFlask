@@ -12,6 +12,6 @@ def index():
 def ping():
     return"<p>pong</p>"
 
-@app.route("/hello/<name>")
+@app.route("/hello/<name>") #This is the link for it to display your name on the site
 def hello(name):
     return f"<p>Hello, {name} !</p>"
