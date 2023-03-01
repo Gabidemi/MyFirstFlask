@@ -3,18 +3,25 @@
     <head>
         <title>My To-Do App</title>
     </head>
-    <body style="background-color:darkblue; color:aqua">
+    <body style="background-color:darkcyan; color:aqua">
         <h1>TO-DO Practice</h1>
         <p>these are what i want to do: {{my_variable}}</p>
         <ul>
             {% for todo in my_variable %}
-                <li style="color:aqua; font-size:20px; font-style: italic; font-family:cursive; background-color:darkblue;">{{todo}}</li>
+                <li style="color:aqua; font-size:20px; font-style: italic; font-family:cursive; background-color:darkcyan;">{{todo}}</li>
 
             {% endfor %}
         <form action="/add" method="post">
             <textarea name="new_todo">
             </textarea>
-            <input type="submit">
+            <input type="submit" 
+            style="border-radius: 12px; 
+            background-color:aquamarine; 
+            color:cornflowerblue; 
+            font-size: 32px; 
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            display: inline-block;
+            ">
         </form>
     </body>
 </html>
