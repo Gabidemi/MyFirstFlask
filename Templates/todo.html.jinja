@@ -5,14 +5,15 @@
     </head>
     <body style="background-color:darkcyan; color:aqua">
         <h1>TO-DO Practice</h1>
-        <p>these are what i want to do: {{my_variable}}</p>
+        <p>these are what i want to do: {{my_variable['description']}}</p>
         <ul>
             {% for todo in my_variable %}
-                <li style="color:aqua; font-size:20px; font-style: italic; font-family:cursive; background-color:darkcyan;">{{todo}}</li>
-
+                <li style="color:aqua; font-size:20px; font-style: italic; font-family:cursive; background-color:darkcyan;">
+                    {{todo['description']}}
+                </li>
             {% endfor %}
         <form action="/add" method="post">
-            <textarea name="new_todo">
+            <textarea style="width:60%; text-align:center;" name="new_todo">
             </textarea>
             <input type="submit" 
             style="border-radius: 12px; 
