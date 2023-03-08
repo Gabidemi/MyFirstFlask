@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <title>My To-Do App</title>
     </head>
-    <body style="background-color:darkcyan; color:aqua">
-        <h1>TO-DO Practice</h1>
-        <p>these are what i want to do: {{my_variable['description']}}</p>
+    <body>
+        <h1 style="text-align:center;">TO-DO Practice</h1>
+        <p>these are what i want to do:</p>
         <ul>
             {% for todo in my_variable %}
-                <li style="color:aqua; font-size:20px; font-style: italic; font-family:cursive; background-color:darkcyan;">
-                    {{todo['description']}}
+                <li style="{% if todo['Complete'] == 1 %} color:limegreen; text-decoration: line-through; {%endif%}">
+                    <i class="nes-icon trophy is-small"></i> | {{todo['description']}}
                 </li>
             {% endfor %}
         <form action="/add" method="post">
-            <textarea style="width:60%; text-align:center;" name="new_todo">
+            <textarea name="new_todo" class="nes-textarea">
             </textarea>
-            <input type="submit" 
-            style="border-radius: 12px; 
-            background-color:aquamarine; 
-            color:cornflowerblue; 
-            font-size: 32px; 
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-            display: inline-block;
-            ">
+            <input type="submit" class="nes-btn">
         </form>
     </body>
 </html>

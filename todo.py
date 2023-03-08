@@ -17,7 +17,7 @@ connection = pymysql.connect(
 def index():
     cursor = connection.cursor()
 
-    cursor.execute("SELECT * FROM `Todos`")
+    cursor.execute("SELECT * FROM `Todos` ORDER BY `Complete`ASC;")
 
     result = cursor.fetchall()
 
