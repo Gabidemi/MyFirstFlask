@@ -10,8 +10,14 @@
         <p>these are what i want to do:</p>
         <ul>
             {% for todo in my_variable %}
-                <li style="{% if todo['Complete'] == 1 %} color:limegreen; text-decoration: line-through; {%endif%}">
-                    <i class="nes-icon trophy is-small"></i> | {{todo['description']}}
+                <li style="{% if todo['Complete'] == 1 %} color:red; text-decoration: line-through; {%endif%}">
+                {% if todo['Complete'] == 0 %}
+                    <form action="/complete" method="post" class ="d-inline-block">
+                        <input name="todo_id" value="{{todo['Id']}}" hidden>
+                        <input type="submit" value="Complete">
+                            {% endif %}
+                        <i class="nes-icon trophy is-small"></i> | {{todo['description']}}
+                    </form action="/complete" method="post">
                 </li>
             {% endfor %}
         <form action="/add" method="post">
